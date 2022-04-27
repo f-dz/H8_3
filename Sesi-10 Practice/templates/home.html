@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Application Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="banner">Avocado Demo Application
+            <div class="row">
+                <a class="tutorial" href="/api/ui"> (Go to API)</a>
+                <a class="tutorial" href="/tutorial" target="_blank"> (Show Tutorial)</a>
+            </div>
+        </h1>
+        <div class="error"></div>
+        <div class="section editor">
+            <label><b>Add New Type</b></label><br />
+            <label for="typeid">Id
+                <input id="typeid" type="text" />
+            </label>
+            <label for="type">Type
+                <input id="type" type="text" />
+            </label>
+            <button id="create_type">Create</button>
+            <button id="update_type">Update</button>
+            <button id="delete_type">Delete</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="section editor">
+            <label><b>Add New Region</b></label><br />
+            <label for="regionid">Id
+                <input id="regionid" type="text" />
+            </label>
+            <label for="region">Region
+                <input id="region" type="text" />
+            </label>
+            <button id="create_region">Create</button>
+            <button id="update_region">Update</button>
+            <button id="delete_region">Delete</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="section editor">
+            <label><b>Add New Avocado</b></label><br />
+            <label for="avocadoid">Id
+                <input id="avocadoid" type="number" />
+            </label>
+            <label for="avgprice">Average Price
+                <input id="avgprice" type="text" />
+            </label>
+            <label for="totalvol">Total Vol
+                <input id="totalvol" type="text"/>
+            </label>
+            <br />
+            <label for="avo_a">Avo A
+                <input id="avo_a" type="text"/>
+            </label>
+            <label for="avo_b">Avo B
+                <input id="avo_b" type="text"/>
+            </label>
+            <label for="avo_c">Avo C
+                <input id="avo_c" type="text"/>
+            </label>
+            <br />
+            <label for="avo_type">Id Type
+                <input id="avo_type" type="text"/>
+            </label>
+            <label for="avo_region">Id Region
+                <input id="avo_region" type="text"/>
+            </label>
+            <br />
+            <div class="row">
+                <button id="create_avo">Create</button>
+                <button id="update_avo">Update</button>
+                <button id="delete_avo">Delete</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+        <div class="avocado">
+            <table class="table_avo">
+                <caption>Avocado Data</caption>
+                <thead>
+                    <tr>
+                        <th>Average Price</th>
+                        <th>Total Vol</th>
+                        <th>Avocado A</th>
+                        <th>Avocado B</th>
+                        <th>Avocado C</th>
+                        <th>Type</th>
+                        <th>Region</th>
+                        <th>Date Create</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="type_table">
+            <table class="table_type">
+                <caption>Type of Avocado</caption>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="region_table">
+            <table class="table_region">
+                <caption>Region of Avocado</caption>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="static/js/home.js"></script>
+
+</html>

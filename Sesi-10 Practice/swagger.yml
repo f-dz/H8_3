@@ -1,0 +1,505 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /avocado:
+    get:
+      operationId: avocado.read_all
+      tags:
+        - Avocado
+      summary: Read the entire set of avocado data, sorted by date
+      description: Read the entire set of avocado data, sorted by date
+      responses:
+        200:
+          description: Successfully read avocado data set operation
+          schema:
+            type: array
+            items:
+              properties:
+                avocadoid:
+                  type: integer
+                  description: Id of the avocado data
+                date:
+                  type: string
+                  description: Create date of avocado data
+                avgprice:
+                  type: number
+                  description: Average price of avocado
+                totalvol:
+                  type: integer
+                  description: Total volume of avocado
+                avo_a:
+                  type: integer
+                  description: Avo_a
+                avo_b:
+                  type: number
+                  description: Avo_b
+                avo_c:
+                  type: number
+                  description: Avo_c
+                type:
+                  type: integer
+                  description: Id of type avocado
+                regionid:
+                  type: integer
+                  description: Id of region avocado
+
+    post:
+      operationId: avocado.create
+      tags:
+        - Avocado
+      summary: Create a avocado data
+      description: Create a new avocado data
+      parameters:
+        - name: avocado
+          in: body
+          description: Avocado data to create
+          required: True
+          schema:
+            type: object
+            properties:
+              avgprice:
+                type: number
+                description: Average prive of avocado
+              totalvol:
+                type: integer
+                description: Total volume of avocado
+              avo_a:
+                type: integer
+                description: Avo_a
+              avo_b:
+                type: number
+                description: Avo_b
+              avo_c:
+                type: number
+                description: Avo_c
+              type:
+                type: integer
+                description: Id of type avocado
+              regionid:
+                type: integer
+                description: Id of region avocado
+      responses:
+        201:
+          description: Successfully created avocado data
+          schema:
+            properties:
+              avocadoid:
+                type: integer
+                description: Id of the avocado data
+              date:
+                type: string
+                description: Create date of avocado data
+              avgprice:
+                type: number
+                description: Average prive of avocado
+              totalvol:
+                type: integer
+                description: Total volume of avocado
+              avo_a:
+                type: integer
+                description: Avo_a
+              avo_b:
+                type: number
+                description: Avo_b
+              avo_c:
+                type: number
+                description: Avo_c
+              type:
+                type: integer
+                description: Id of type avocado
+              regionid:
+                type: integer
+                description: Id of region avocado
+
+  /avocado/{avocadoid}:
+    get:
+      operationId: avocado.read_one
+      tags:
+        - Avocado
+      summary: Read one avocado data
+      description: Read one avocado data
+      parameters:
+        - name: avocadoid
+          in: path
+          description: Id of avocado data to get
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read avocado from avocado data operation
+          schema:
+            type: object
+            properties:
+              avocadoid:
+                type: integer
+                description: Id of the avocado data
+              date:
+                type: string
+                description: Create date of avocado data
+              avgprice:
+                type: number
+                description: Average prive of avocado
+              totalvol:
+                type: integer
+                description: Total volume of avocado
+              avo_a:
+                type: integer
+                description: Avo_a
+              avo_b:
+                type: number
+                description: Avo_b
+              avo_c:
+                type: number
+                description: Avo_c
+              type:
+                type: integer
+                description: Id of type avocado
+              regionid:
+                type: integer
+                description: Id of region avocado
+
+    put:
+      operationId: avocado.update
+      tags:
+        - Avocado
+      summary: Update a avocado data
+      description: Update a avocado data
+      parameters:
+        - name: avocadoid
+          in: path
+          description: Id avocado data to update
+          type: integer
+          required: True
+        - name: avocado
+          in: body
+          schema:
+            type: object
+            properties:
+              avgprice:
+                type: number
+                description: Average prive of avocado
+              totalvol:
+                type: integer
+                description: Total volume of avocado
+              avo_a:
+                type: integer
+                description: Avo_a
+              avo_b:
+                type: number
+                description: Avo_b
+              avo_c:
+                type: number
+                description: Avo_c
+              type:
+                type: integer
+                description: Id of type avocado
+              regionid:
+                type: integer
+                description: Id of region avocado
+      responses:
+        200:
+          description: Successfully updated avocado
+          schema:
+            properties:
+              avocadoid:
+                type: integer
+                description: Id of the avocado data
+              date:
+                type: string
+                description: Create date of avocado data
+              avgprice:
+                type: number
+                description: Average prive of avocado
+              totalvol:
+                type: integer
+                description: Total volume of avocado
+              avo_a:
+                type: integer
+                description: Avo_a
+              avo_b:
+                type: number
+                description: Avo_b
+              avo_c:
+                type: number
+                description: Avo_c
+              type:
+                type: integer
+                description: Id of type avocado
+              regionid:
+                type: integer
+                description: Id of region avocado
+
+    delete:
+      operationId: avocado.delete
+      tags:
+        - Avocado
+      summary: Delete avocado data from avocado list
+      description: Delete avocado data
+      parameters:
+        - name: avocadoid
+          in: path
+          type: integer
+          description: Id of avocado data to delete
+          required: true
+      responses:
+        200:
+          description: Successfully deleted avocado data
+
+  /type:
+    get:
+      operationId: type.read_all
+      tags:
+        - Type
+      summary: Read the entire set of type of avocado, sorted by id
+      description: Read the entire set of type of avocado, sorted by id
+      responses:
+        200:
+          description: Successfully read type of avocado
+          schema:
+            type: array
+            items:
+              properties:
+                typeid:
+                  type: integer
+                  description: Id of the type
+                type:
+                  type: string
+                  description: Type of avocado
+
+    post:
+      operationId: type.create
+      tags:
+        - Type
+      summary: Create a type of avocado
+      description: Create a type of avocado
+      parameters:
+        - name: type
+          in: body
+          description: Text content of the type to create
+          required: True
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                description: Text of the type to create
+      responses:
+        201:
+          description: Successfully created a type of avocado
+          schema:
+            properties:
+              typeid:
+                type: integer
+                description: Id of the created type
+              type:
+                type: string
+                description: Text content of the type
+
+  /type/{typeid}:
+    get:
+      operationId: type.read_one
+      tags:
+        - Type
+      summary: Read a particular type of avocado
+      description: Read a particular type of avocado
+      parameters:
+        - name: typeid
+          in: path
+          description: Id of the type
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read type of avocado
+          schema:
+            type: object
+            properties:
+              typeid:
+                type: integer
+                description: Id of the type
+              type:
+                type: string
+                description: Text content of the type
+
+    put:
+      operationId: type.update
+      tags:
+        - Type
+      summary: Update a type of avocado
+      description: Update a type of avocado
+      parameters:
+        - name: typeid
+          in: path
+          description: Id the type to update
+          type: integer
+          required: True
+        - name: type
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                description: Text content of the type to updated
+      responses:
+        200:
+          description: Successfully updated type of avocado
+          schema:
+            properties:
+              typeid:
+                type: integer
+                description: Id of the type
+              type:
+                type: string
+                description: Text content of the type to updated
+
+    delete:
+      operationId: type.delete
+      tags:
+        - Type
+      summary: Delete a type of avocado
+      description: Delete a type of avocado
+      parameters:
+        - name: typeid
+          in: path
+          description: Id of type
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a type of avocado
+
+  /region:
+    get:
+      operationId: region.read_all
+      tags:
+        - Region
+      summary: Read the entire set of region of avocado, sorted by id
+      description: Read the entire set of region of avocado, sorted by id
+      responses:
+        200:
+          description: Successfully read region of avocado
+          schema:
+            type: array
+            items:
+              properties:
+                regionid:
+                  type: integer
+                  description: Id of the region
+                region:
+                  type: string
+                  description: Region of avocado
+
+    post:
+      operationId: region.create
+      tags:
+        - Region
+      summary: Create a region of avocado
+      description: Create a region of avocado
+      parameters:
+        - name: region
+          in: body
+          description: Text content of the region to create
+          required: True
+          schema:
+            type: object
+            properties:
+              region:
+                type: string
+                description: Text of the region to create
+      responses:
+        201:
+          description: Successfully created a region of avocado
+          schema:
+            properties:
+              regionid:
+                type: integer
+                description: Id of the created region
+              region:
+                type: string
+                description: Text content of the region
+
+  /region/{regionid}:
+    get:
+      operationId: region.read_one
+      tags:
+        - Region
+      summary: Read a particular region of avocado
+      description: Read a particular region of avocado
+      parameters:
+        - name: regionid
+          in: path
+          description: Id of the region
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read region of avocado
+          schema:
+            type: object
+            properties:
+              regionid:
+                type: integer
+                description: Id of the region
+              region:
+                type: string
+                description: Text content of the region
+
+    put:
+      operationId: region.update
+      tags:
+        - Region
+      summary: Update a region of avocado
+      description: Update a region of avocado
+      parameters:
+        - name: regionid
+          in: path
+          description: Id the region to update
+          type: integer
+          required: True
+        - name: region
+          in: body
+          schema:
+            type: object
+            properties:
+              region:
+                type: string
+                description: Text content of the region to updated
+      responses:
+        200:
+          description: Successfully updated region of avocado
+          schema:
+            properties:
+              regionid:
+                type: integer
+                description: Id of the region
+              region:
+                type: string
+                description: Text content of the region to updated
+
+    delete:
+      operationId: region.delete
+      tags:
+        - Region
+      summary: Delete a region of avocado
+      description: Delete a region of avocado
+      parameters:
+        - name: regionid
+          in: path
+          description: Id of regino
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a region of avocado

@@ -1,0 +1,20 @@
+Nama    : Fatin Dzakiyah
+Kode    : FSDO003ONL002
+
+Panduan penggunaan aplikasi:
+1.  Halaman utama adalah halaman yang berisi tabel type avocado, region avocado, dan data avocado serta form-form untuk melakukan create, read, update, dan delete data
+2.  TYPE
+    a. Untuk menambahkan data type baru, isi kolom type lalu klik Create, muncul alert sukses menambahkan
+    b. Untuk mengupdate type, isi kolom id dan type lalu klik Update, muncul alert sukses mengupdate
+    c. Untuk menghapus type, isi kolom id lalu klik Delete, muncul alert sukses menghapus
+3.  REGION
+    a. Untuk menambahkan data region baru, isi kolom region lalu klik Create, muncul alert sukses menambahkan
+    b. Untuk mengupdate region, isi kolom id dan region lalu klik Update, muncul alert sukses mengupdate
+    c. Untuk menghapus region, isi kolom id lalu klik Delete, muncul alert sukses menghapus
+4.  AVOCADO
+    a. Untuk menambahkan data avocado baru, isi kolom yang tersedia lalu klik Create, muncul alert sukses menambahkan,
+       jika type dan region sudah digunakan pada data yang lain maka akan muncul pesan error
+    b. Untuk mengupdate avocado, pada tabel avocado klik 2x pada baris data yang hendak diedit, ubah data yang diperlukan
+       lalu klik Update, muncul alert sukses mengupdate, jika type dan region sudah digunakan pada data yang lain maka akan muncul pesan error
+    c. Untuk menghapus avocado, isi kolom id lalu klik Delete, muncul alert sukses menghapus
+5.  Klik Reset untuk melakukan reload form
